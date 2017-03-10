@@ -2,6 +2,12 @@ var cool = require('cool-ascii-faces');
 var express = require('express');
 var app = express();
 var pg = require('pg');
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }))
+
+app.use(bodyParser.json());
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
