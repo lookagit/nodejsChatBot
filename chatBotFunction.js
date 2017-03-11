@@ -1,6 +1,6 @@
 var request = require('request');
 
-export default function receivedMessage(event) {
+ var receivedMessage = function (event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
@@ -66,3 +66,4 @@ function callSendAPI(messageData) {
     }
   });
 }
+exports.receivedMessage = receivedMessage;
